@@ -1,2 +1,0 @@
-# dailyLeetcode
-Daily LeetCode Practice
