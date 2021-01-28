@@ -8,7 +8,7 @@ public class P690_EmployeeImportance {
         public int importance;
         public List<Integer> subordinates;
     }
-    
+
     public int getImportance(List<Employee> employees, int id) {
         // BFS
         int res = 0;
@@ -22,10 +22,9 @@ public class P690_EmployeeImportance {
 
         while (!bfs.isEmpty()) {
             Employee curr = map.get(bfs.poll());
-            res += curr.importance;
-
             if (seen[curr.id]) continue;
             seen[curr.id] = true;
+            res += curr.importance;
 
             for (int ne : curr.subordinates) {
                 if (!seen[ne]) bfs.offer(ne);
